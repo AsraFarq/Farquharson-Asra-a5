@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text livesDisplay;
     public TMP_Text gameOverDisplay;
     public AsteroidSpawner asteroidSpawner;
-
+    [SerializeField] private AudioSource _audioSource;
     public void AddScore()
     {
         score++;
@@ -67,6 +67,11 @@ public class GameManager : MonoBehaviour
             {
                 Scene current = SceneManager.GetActiveScene();
                 SceneManager.LoadScene(current.name);
+                
+            }
+if (lives <= 0)
+            { 
+                GetComponent<AudioSource>().Play();   
             }
         }
     }
