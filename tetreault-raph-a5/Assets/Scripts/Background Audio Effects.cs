@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BackgroundAudioEffects : MonoBehaviour
 {
-    private AudioSource _audioSource;
+    private AudioSource audioSource;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -21,7 +21,7 @@ public class BackgroundAudioEffects : MonoBehaviour
     {
         if (audioSource.isPlaying)
         {
-            _audioSource.Stop();
+            audioSource.Stop();
         }
     }
 }
